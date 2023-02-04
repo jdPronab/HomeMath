@@ -1,0 +1,26 @@
+<HeaderCard>
+    size_hint: 1, None
+    height: dp(160)
+    
+    Image:
+        source: root.source
+        size_hint: None, None
+        allow_stretch: True
+        width: root.width
+        height: root.height
+
+    MDFloatingActionButton:
+        icon: "arrow-left"
+        size_hint: None, None
+        x: root.x + dp(8)
+        y: root.height - (self.height + dp(12))
+        on_release: app.manager_screens.current = 'main screen'
+
+    MDFloatLayout:
+        MDLabel:
+            text: root.text
+            font_size: dp(32)
+            size_hint: None, None
+            width: len(self.text) * self.font_size
+            halign: 'center'
+            pos_hint: {'center_x': .5}

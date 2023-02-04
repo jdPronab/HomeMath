@@ -1,0 +1,41 @@
+<MainScreenView>
+    SearchBar:
+        size_hint_x: None
+        pos_hint: {'center_x': .5}
+        width: root.width - card_box.padding[0]*2
+        y: card_box.height
+    
+    MDFloatingActionButton:
+        icon: 'menu'
+        icon_size: "32sp"
+        x: root.width - (self.width + dp(12))
+        y: root.height - (self.height + dp(12))
+
+    MDGridLayout:
+        id: card_box
+        cols: 2
+        row: 2
+        spacing: "24dp"
+        padding: "24dp"
+        size_hint_y: None
+        height: root.height / 1.4
+        
+        SubjectCard:
+            source: "assets/images/chae.jpg"
+            text: "Geometry"
+            on_release: root.controller.get_content_screen(self.text) #app.manager_screens.current = 'content screen'
+
+        SubjectCard:
+            source: "assets/images/chae.jpg"
+            text: "Arithmatics"
+            on_release: app.manager_screens.current = 'content screen'
+
+        SubjectCard:
+            source: "assets/images/chae.jpg"
+            text: "Algebra"
+            on_release: app.manager_screens.current = 'content screen'
+
+        SubjectCard:
+            source: "assets/images/chae.jpg"
+            text: "Staistics"
+            on_release: app.manager_screens.current = 'content screen'
